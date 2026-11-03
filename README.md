@@ -8,7 +8,7 @@ Professores publicam; alunos leem. Erro ou sugestão: abra uma issue aqui.
 
 Uma pasta por aula. O nome da pasta diz tudo: `AAAA-MM-DD-iapd-26t3-sNN-aula-NN-tema`, ou seja, data, curso, turma, semana, aula e tema. Dentro de cada pasta:
 
-- o PDF dos slides, com o nome completo (`IAPD-26T3 - S03 - Aula 01 - 2026-11-03 - Steering e skill.pdf`);
+- o PDF dos slides, com o nome completo (`IAPD-26T3 - S03 - Aula 01 - 2026-11-03 - Spec, steering e skill.pdf`);
 - `README.md` com a agenda, as atividades e os entregáveis daquela aula;
 - `atividades/`, uma subpasta por atividade, com o que a atividade usa (skills, fichas, templates).
 
@@ -18,7 +18,7 @@ Uma pasta por aula. O nome da pasta diz tudo: `AAAA-MM-DD-iapd-26t3-sNN-aula-NN-
 |---|---|---|---|---|
 | 19/10 | S01 | 1 | Ensinando máquinas: o que acontece entre o Enter e a resposta | `2026-10-19-iapd-26t3-s01-aula-01-ensinando-maquinas/` |
 | 21/10 | S01 | 2 | Falando com máquinas: Bag of Words, tokens, vetores e atenção | `2026-10-21-iapd-26t3-s01-aula-02-falando-com-maquinas/` |
-| 03/11 | S03 | 1 | Steering e skill | `2026-11-03-iapd-26t3-s03-aula-01-steering-e-skill/` |
+| 03/11 | S03 | 1 | Spec, steering e skill | `2026-11-03-iapd-26t3-s03-aula-01-spec-steering-e-skill/` |
 | 04/11 | S03 | 2 | Múltiplas skills | `2026-11-04-iapd-26t3-s03-aula-02-multiplas-skills/` |
 | 05/11 | S03 | 3 | Spec e o Torneio | `2026-11-05-iapd-26t3-s03-aula-03-spec-e-o-torneio/` |
 
