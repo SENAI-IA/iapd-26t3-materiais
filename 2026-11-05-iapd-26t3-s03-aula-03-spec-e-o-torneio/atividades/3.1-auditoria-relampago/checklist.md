@@ -2,7 +2,7 @@
 
 Grupo: ____________________
 
-Uma skill é código de terceiros com permissão de shell. Antes de instalar qualquer uma, percorra os 10 itens. Na atividade, auditem as 3 skills de `kit-skills/auditoria/`: `review-helper`, `git-commit-msg`, `pytest-runner`.
+Uma skill é código de terceiros com permissão de shell. Antes de instalar qualquer uma, percorra os 10 itens. Na atividade, auditem as 3 skills de `auditoria/`: `review-helper`, `git-commit-msg`, `pytest-runner`.
 
 Pontuação: +3 por encontrar a instrução escondida; +1 por item do checklist verificado e anotado com evidência (arquivo e linha). Item marcado sem evidência não vale.
 

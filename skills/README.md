@@ -4,7 +4,7 @@ Skills que a turma considera boas o bastante para qualquer equipe instalar. Padr
 
 Para entrar aqui, a skill precisa:
 
-1. Passar em `python ../2026-11-03-semana-03-steering-skill-spec/kit/kit-skills/validate.py <pasta>`.
+1. Passar em `python ../2026-11-03-iapd-26t3-s03-aula-01-steering-e-skill/atividades/1.3-skill-v0/validate.py <pasta>`.
 2. Ter `evals/evals.json` com pelo menos 3 casos (um near-miss) e um `benchmark.json` de uma rodada com e sem skill.
 3. Passar pelo checklist de auditoria da semana 3 (nada de rede em `Prerequisites`, nada de instrução escondida).
 

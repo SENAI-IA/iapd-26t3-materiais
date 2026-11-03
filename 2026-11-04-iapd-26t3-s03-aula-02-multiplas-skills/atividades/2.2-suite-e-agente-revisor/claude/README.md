@@ -4,7 +4,7 @@ A spec Agent Skills é a mesma. Para rodar a suíte no Claude Code:
 
 ```bash
 mkdir -p .claude/skills
-cp -r kit-skills/suite-referencia/* .claude/skills/     # mesmos SKILL.md, sem mudar uma linha
+cp -r suite-referencia/* .claude/skills/     # mesmos SKILL.md, sem mudar uma linha
 ```
 
 Depois, em sessão nova: `/review-security` ou "revisa este repositório". O equivalente do hook

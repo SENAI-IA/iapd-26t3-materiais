@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Valida o frontmatter de um ou mais SKILL.md contra a spec Agent Skills (agentskills.io).
 
-Uso: python kit-skills/validate.py caminho/da/skill [outra/skill ...]
-     python kit-skills/validate.py --all kit-skills/suite-referencia
+Uso: python validate.py caminho/da/skill [outra/skill ...]
+     python validate.py --all <pasta-com-skills>/suite-referencia
 
 Regras checadas:
 - frontmatter YAML delimitado por --- na primeira linha

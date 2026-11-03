@@ -15,7 +15,7 @@ Regra: a `description` carrega o gatilho inteiro. Diga o QUE a skill faz, QUANDO
 
 ## Passo 2 (10 min): previsão
 
-O professor projeta 20 prompts de `fichas/aula2-trigger-eval.json`, um por vez. Para cada um, marquem qual skill as SUAS descrições fariam disparar (ou "nenhuma"). Não vale mudar a descrição depois de ver o prompt.
+O professor projeta 20 prompts de `trigger-eval.json`, um por vez. Para cada um, marquem qual skill as SUAS descrições fariam disparar (ou "nenhuma"). Não vale mudar a descrição depois de ver o prompt.
 
 | # | Previsão do grupo | Esperado (revelado depois) | Acertou? |
 |---|---|---|---|

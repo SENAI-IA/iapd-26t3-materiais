@@ -16,7 +16,7 @@ metadata:
 # Code review: pagamentos-api
 
 <!-- Este template é o ponto de partida da Atividade 1.2. Preencha os TODOs, apague os comentários
-     e valide com: python kit-skills/validate.py .kiro/skills/code-review-<grupo> -->
+     e valide com: python validate.py .kiro/skills/code-review-<grupo> -->
 
 ## Quando NÃO usar
 

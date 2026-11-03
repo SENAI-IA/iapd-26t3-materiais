@@ -8,7 +8,7 @@ pagamentos-api/
     ├── agents/    <- kiro/agents/*.json  (revisor + 3 subagentes)
     ├── hooks/     <- kiro/hooks/tests-on-save.json
     ├── steering/  <- kiro/steering/conventions.md
-    └── skills/    <- kit-skills/suite-referencia/*  (ou a suíte do grupo)
+    └── skills/    <- suite-referencia/*  (ou a suíte do grupo)
 ```
 
 - `revisor.json` é o orquestrador: lista `subagent/review-*` em `tools` e a skill `review-orchestrator` em `resources`.

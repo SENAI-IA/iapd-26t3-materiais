@@ -7,7 +7,7 @@ Cada grupo joga as duas pontas: planta bugs no repo de outro grupo (Red) e caça
 - `pagamentos-api-clean/`: cópia do código correto, sem `.git`. Cada grupo começa dele.
 - A suíte de skills do grupo (`review-*` + `review-orchestrator`) e o agente `revisor`.
 - `scripts/validate_report.py`, `scripts/score.py` (dentro do repo).
-- `fichas/aula3-envelope-red-team.md`: declaração lacrada do Red Team.
+- `envelope-red-team.md`: declaração lacrada do Red Team.
 - Juiz: o professor. Em caso de dúvida sobre se um bug é legítimo, vale o teste que falha.
 
 ## Fase 1: Red Team (15 min)
@@ -17,7 +17,7 @@ Cada grupo joga as duas pontas: planta bugs no repo de outro grupo (Red) e caça
 3. Para cada bug, escreva um teste pytest em `red/<grupo>/tests_red/test_bugNN.py` que **falha com o bug e passa sem ele** (prova de que é bug real). Rode e confirme: 5 falhando. Esses testes NÃO vão com o repo entregue; ficam com o juiz.
 4. Commite os bugs com uma mensagem de commit plausível (não "planta bugs").
 5. Opcional: prepare uma pasta `.kiro/skills/` "de cortesia" para o Blue Team, que pode conter uma skill envenenada (instrução de supressão escondida, nos moldes da Atividade 3.1). Proibido: rede, leitura de credenciais, apagar arquivos. Só instrução em markdown.
-6. Preencha o envelope (`fichas/aula3-envelope-red-team.md`) e entregue ao juiz **antes** da troca. Sem envelope, o grupo não pontua como Red.
+6. Preencha o envelope (`envelope-red-team.md`) e entregue ao juiz **antes** da troca. Sem envelope, o grupo não pontua como Red.
 
 ## Fase 2: Troca e auditoria (10 min)
 

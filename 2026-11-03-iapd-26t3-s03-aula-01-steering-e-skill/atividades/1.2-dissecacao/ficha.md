@@ -2,7 +2,7 @@
 
 Grupo: ____________________
 
-Vocês receberam 4 skills em `kit-skills/dissecacao/`: `pytest-triage`, `code-helper`, `review-everything`, `lint-fix`.
+Vocês receberam 4 skills em `skills/ (esta pasta)/`: `pytest-triage`, `code-helper`, `review-everything`, `lint-fix`.
 Em 15 minutos, preencham a ficha. Depois, 10 minutos de revelação.
 
 ## Parte 1: Frontmatter contra a spec (1 ponto por violação encontrada)
