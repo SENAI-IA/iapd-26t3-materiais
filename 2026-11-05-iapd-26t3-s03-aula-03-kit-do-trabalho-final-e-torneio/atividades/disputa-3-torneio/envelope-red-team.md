@@ -6,7 +6,7 @@ Entregar ao juiz ANTES da troca. Depois da entrega, nada pode ser alterado.
 
 ## Bugs plantados
 
-| # | Categoria | Arquivo | Linha(s) | Severidade declarada | Regra EARS violada (WHEN ... THE SYSTEM SHALL ...) | Teste que prova (arquivo) |
+| # | Categoria | Arquivo | Linha(s) | Severidade declarada | Requisito violado (RNN) e regra EARS | Teste que prova (arquivo) |
 |---|---|---|---|---|---|---|
 | 1 | correção | | | | | tests_red/test_bug01.py |
 | 2 | segurança | | | | | tests_red/test_bug02.py |
@@ -18,7 +18,7 @@ A coluna "Regra EARS violada" é a mini-spec do comportamento correto que o bug 
 
 Confirmo que `pytest -q tests/` continua verde com os bugs: [ ] sim
 
-Confirmo que `pytest -q tests_red/` falha nos 5 testes com os bugs e passa no `base`: [ ] sim
+Confirmo que `pytest -q tests_red/` falha nos 5 testes com os bugs e passa na `main`: [ ] sim
 
 ## Skill envenenada
 
