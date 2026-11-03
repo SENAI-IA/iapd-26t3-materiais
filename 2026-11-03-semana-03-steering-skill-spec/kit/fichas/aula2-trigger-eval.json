@@ -1,0 +1,27 @@
+{
+  "descricao": "Atividade 2.1 (O gatilho certo). 20 prompts: 10 devem disparar uma skill específica da suíte, 10 são near-misses (compartilham vocabulário, pedem outra coisa). O professor projeta um por vez; o grupo declara qual skill dispararia; depois 5 sorteados rodam de verdade no agente.",
+  "skills": ["review-security", "review-correctness", "review-performance", "pr-summary", "nenhuma"],
+  "pontuacao": { "previsao_correta": 1, "disparo_real_correto": 2, "disparo_em_near_miss": -1 },
+  "prompts": [
+    { "id": 1,  "prompt": "Dá uma olhada se tem alguma vulnerabilidade nesse PR antes de eu mergear.", "esperado": "review-security", "tipo": "positivo" },
+    { "id": 2,  "prompt": "Esse cálculo de reembolso em refunds.py está certo? Parece que deixa reembolsar mais do que foi pago.", "esperado": "review-correctness", "tipo": "positivo" },
+    { "id": 3,  "prompt": "O extrato está demorando 8 segundos para 2 mil contas. Otimiza as queries do ledger.", "esperado": "review-performance", "tipo": "positivo" },
+    { "id": 4,  "prompt": "Resume esse PR para eu colar na descrição no GitHub.", "esperado": "pr-summary", "tipo": "positivo" },
+    { "id": 5,  "prompt": "Checa se algum segredo ficou hardcoded ou se tem SQL montado na mão em app/.", "esperado": "review-security", "tipo": "positivo" },
+    { "id": 6,  "prompt": "A paginação de /payments está pulando registros. Revisa a lógica de db.py.", "esperado": "review-correctness", "tipo": "positivo" },
+    { "id": 7,  "prompt": "Tem N+1 em algum lugar desse repositório? Isso vai para produção amanhã.", "esperado": "review-performance", "tipo": "positivo" },
+    { "id": 8,  "prompt": "O que esse diff faz, em três linhas? Não quero achados, só o resumo.", "esperado": "pr-summary", "tipo": "positivo" },
+    { "id": 9,  "prompt": "Faz um security review de webhooks.py e auth.py, com CWE em cada achado.", "esperado": "review-security", "tipo": "positivo" },
+    { "id": 10, "prompt": "Revisa a lógica de idempotência do webhook; acho que processa duas vezes.", "esperado": "review-correctness", "tipo": "positivo" },
+    { "id": 11, "prompt": "Escreve testes para payments.py cobrindo create_payment e capture_payment.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "pede testes, não revisão; vocabulário de payments" },
+    { "id": 12, "prompt": "Explica como funciona a assinatura HMAC em auth.py, estou aprendendo.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "pede explicação, não revisão de segurança" },
+    { "id": 13, "prompt": "Faz o deploy dessa versão para o ambiente de staging.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "operação, não revisão" },
+    { "id": 14, "prompt": "Corrige o bug de SQL injection em db.py que o revisor apontou.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "pede a correção, não a revisão; 'SQL injection' puxa review-security" },
+    { "id": 15, "prompt": "Escreve a mensagem de commit para essas mudanças.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "parece pr-summary, mas é commit, outra skill" },
+    { "id": 16, "prompt": "Adiciona um índice em payments(customer_id) e roda os testes.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "implementação de desempenho, não revisão" },
+    { "id": 17, "prompt": "Quanto custa em tokens revisar esse repositório inteiro com o agente?", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "pergunta sobre custo, vocabulário de revisão" },
+    { "id": 18, "prompt": "Documenta as convenções de dinheiro em centavos no README.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "documentação, não correção" },
+    { "id": 19, "prompt": "Formata o código com ruff e organiza os imports.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "estilo, nenhuma skill da suíte cobre" },
+    { "id": 20, "prompt": "Me mostra o diff entre clean e main, sem comentar nada.", "esperado": "nenhuma", "tipo": "near-miss", "por_que": "quer o diff cru; pr-summary resume, e o usuário pediu para não comentar" }
+  ]
+}

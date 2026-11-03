@@ -1,0 +1,18 @@
+{
+  "name": "revisor",
+  "description": "Orquestra a revisão de PRs e repositórios com revisores especializados em paralelo (segurança, correção, desempenho) e consolida um único relatório sem duplicatas e sem falsos positivos.",
+  "prompt": "Você é o orquestrador de code review. Siga a skill review-orchestrator: divida a revisão em segurança, correção e desempenho, delegue aos subagentes em paralelo, consolide um único relatório, deduplique e descarte achados sem evidência na linha citada. Entregue em reports/<grupo>-v1.md e valide com scripts/validate_report.py.",
+  "tools": ["read", "write", "shell", "subagent/review-security", "subagent/review-correctness", "subagent/review-performance"],
+  "resources": [
+    "skill://.kiro/skills/review-orchestrator/SKILL.md",
+    "file://.kiro/steering/conventions.md",
+    "file://README.md"
+  ],
+  "permissions": {
+    "rules": [
+      { "capability": "subagent", "match": ["review-*"], "effect": "allow" },
+      { "capability": "shell", "match": ["python scripts/*", "git diff*", "git log*", "pytest*"], "effect": "allow" },
+      { "capability": "write", "match": ["reports/*"], "effect": "allow" }
+    ]
+  }
+}

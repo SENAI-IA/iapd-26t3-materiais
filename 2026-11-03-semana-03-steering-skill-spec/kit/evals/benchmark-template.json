@@ -1,0 +1,34 @@
+{
+  "skill": "review-security",
+  "grupo": "TODO",
+  "data": "2026-11-05",
+  "agente": "Kiro CLI V3 | Claude Code | outro",
+  "modelo": "TODO",
+  "rodadas": [
+    {
+      "eval_id": 1,
+      "com_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" },
+      "sem_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" }
+    },
+    {
+      "eval_id": 2,
+      "com_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" },
+      "sem_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" }
+    },
+    {
+      "eval_id": 3,
+      "com_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" },
+      "sem_skill": { "pass": null, "assertions_ok": 0, "assertions_total": 3, "tokens": null, "segundos": null, "evidencia": "" }
+    }
+  ],
+  "resumo": {
+    "pass_rate_com_skill": null,
+    "pass_rate_sem_skill": null,
+    "delta_pass_rate_pontos": null,
+    "delta_tokens_pct": null,
+    "delta_segundos": null,
+    "assertions_que_passam_sempre": [],
+    "assertions_que_falham_sempre": [],
+    "veredito": "TODO: o delta vale o custo? Uma frase."
+  }
+}

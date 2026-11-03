@@ -1,0 +1,16 @@
+{
+  "name": "review-correctness",
+  "description": "Revisor de correção lógica: off-by-one, idempotência, datas, dinheiro, estados, exceções engolidas. Use para a parte de correção de uma revisão.",
+  "prompt": "Você é o revisor de correção. Siga a skill review-correctness: leia o módulo inteiro, confira funções que existem e não são chamadas, devolva só a tabela de achados com evidência.",
+  "tools": ["read", "shell"],
+  "resources": [
+    "skill://.kiro/skills/review-correctness/SKILL.md",
+    "file://.kiro/steering/conventions.md"
+  ],
+  "permissions": {
+    "rules": [
+      { "capability": "shell", "match": ["git diff*", "git log*", "scripts/collect_diff.sh*"], "effect": "allow" },
+      { "capability": "write", "match": ["*"], "effect": "deny" }
+    ]
+  }
+}

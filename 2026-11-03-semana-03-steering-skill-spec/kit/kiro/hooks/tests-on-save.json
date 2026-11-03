@@ -1,0 +1,13 @@
+{
+  "name": "tests-on-save",
+  "version": "1.0.0",
+  "description": "Roda a suíte pytest sempre que um arquivo .py é salvo e injeta o resultado no contexto do agente.",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["**/*.py"]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "python -m pytest -q -p no:cacheprovider 2>&1 | tail -n 15"
+  }
+}

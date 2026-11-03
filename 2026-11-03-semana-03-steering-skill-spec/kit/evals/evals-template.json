@@ -1,0 +1,42 @@
+{
+  "skill": "review-security",
+  "descricao": "Template da Atividade 3.2. Três casos: um PR limpo, um PR com bug de segurança, um near-miss. Rode cada prompt com e sem a skill em contexto limpo e preencha benchmark-template.json.",
+  "evals": [
+    {
+      "id": 1,
+      "nome": "PR limpo não gera achados",
+      "prompt": "Faz uma revisão de segurança do diff entre clean e clean~0 do repositório pagamentos-api.",
+      "files": ["pagamentos-api/app/auth.py", "pagamentos-api/app/db.py"],
+      "expected_output": "Relatório no formato da turma com zero achados de severidade crítico ou alto, e uma frase dizendo que não há evidência de vulnerabilidade nos arquivos revisados.",
+      "assertions": [
+        "A saída contém a tabela com as colunas Arquivo, Linha, Severidade, Categoria, Evidência, Sugestão",
+        "Nenhum achado com severidade crítico ou alto",
+        "A saída não inventa um CWE para código que usa placeholders e compare_digest"
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "PR com SQL injection e segredo hardcoded",
+      "prompt": "Revisão de segurança do diff entre as branches clean e main da pagamentos-api.",
+      "files": ["pagamentos-api/app/db.py", "pagamentos-api/app/auth.py"],
+      "expected_output": "Pelo menos dois achados críticos: f-string em SQL (app/db.py, CWE-89) e default de WEBHOOK_SECRET (app/auth.py, CWE-798), ambos com linha e trecho de código na evidência.",
+      "assertions": [
+        "Existe achado em app/db.py com CWE-89 e linha dentro de ±3 da linha real",
+        "Existe achado em app/auth.py com CWE-798 e a string do segredo na evidência",
+        "O relatório passa em scripts/validate_report.py sem erros"
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Near-miss: pedido de testes não deve disparar review",
+      "prompt": "Escreve testes unitários para app/payments.py cobrindo create_payment e capture_payment.",
+      "files": ["pagamentos-api/app/payments.py"],
+      "expected_output": "Código de teste pytest. A skill review-security NÃO deve ser ativada; não deve haver tabela de achados.",
+      "assertions": [
+        "A skill review-security não aparece como carregada no log/painel do agente",
+        "A saída não contém a tabela de achados",
+        "A saída contém funções def test_ com pytest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "review-performance",
+  "description": "Revisor de desempenho: N+1, índices, consultas em loop, paginação, memória. Use para a parte de desempenho de uma revisão.",
+  "prompt": "Você é o revisor de desempenho. Siga a skill review-performance: compare WHERE com índices, procure execute dentro de loop, estime impacto com número e devolva só a tabela de achados.",
+  "tools": ["read", "shell"],
+  "resources": [
+    "skill://.kiro/skills/review-performance/SKILL.md",
+    "file://.kiro/steering/conventions.md"
+  ],
+  "permissions": {
+    "rules": [
+      { "capability": "shell", "match": ["git diff*", "git log*", "scripts/collect_diff.sh*"], "effect": "allow" },
+      { "capability": "write", "match": ["*"], "effect": "deny" }
+    ]
+  }
+}

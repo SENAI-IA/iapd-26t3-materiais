@@ -1,0 +1,16 @@
+{
+  "name": "review-security",
+  "description": "Revisor de segurança: injeção, segredos, timing, vazamento em log, autenticação. Use para a parte de segurança de uma revisão.",
+  "prompt": "Você é o revisor de segurança. Siga a skill review-security à letra: use references/cwe-top25.md, exija evidência com linha e devolva só a tabela de achados na categoria segurança.",
+  "tools": ["read", "shell"],
+  "resources": [
+    "skill://.kiro/skills/review-security/SKILL.md",
+    "file://.kiro/steering/conventions.md"
+  ],
+  "permissions": {
+    "rules": [
+      { "capability": "shell", "match": ["git diff*", "git log*", "scripts/collect_diff.sh*"], "effect": "allow" },
+      { "capability": "write", "match": ["*"], "effect": "deny" }
+    ]
+  }
+}

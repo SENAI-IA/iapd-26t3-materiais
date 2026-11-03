@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [{ "type": "command", "command": "python -m pytest -q -p no:cacheprovider 2>&1 | tail -n 15" }]
+      }
+    ]
+  }
+}
