@@ -17,7 +17,7 @@ Contribua por Pull Request a partir do repo da equipe.
 | Site | O que é | Como usar |
 |---|---|---|
 | [skills.sh](https://skills.sh/) | diretório da Vercel, leaderboard por instalações | `npx skills add <owner>/<repo>` (Claude Code, Cursor, Codex, Copilot); publicar = repo público + PR em `vercel-labs/skills` |
-| [SkillsMP](https://skillsmp.com/) | catálogo independente raspado do GitHub, 10 mil+ skills, busca semântica | só lista repos com 2+ estrelas; eles mesmos avisam: revise o código antes de instalar |
+| [SkillsMP](https://skillsmp.com/) | catálogo independente raspado do GitHub, 3,9 milhões de SKILL.md, busca semântica | só lista repos com 2+ estrelas; eles mesmos avisam: revise o código antes de instalar |
 | [anthropics/skills](https://github.com/anthropics/skills) | repo oficial: spec, `template/`, exemplos (docx, pptx, pdf, xlsx, mcp-builder...) | `/plugin marketplace add anthropics/skills` |
 | [agentskills.io](https://agentskills.io) | o padrão aberto Agent Skills | é o que o `validate.py` da turma checa |
 | [awesome-claude-skills](https://github.com/travisvn/awesome-claude-skills) | lista curada: coleções, guias, segurança | leitura |
