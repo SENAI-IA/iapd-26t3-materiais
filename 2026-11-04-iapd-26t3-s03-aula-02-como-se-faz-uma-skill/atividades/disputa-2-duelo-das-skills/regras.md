@@ -40,4 +40,16 @@ Regras de quem testa: não edita o SKILL.md; não repete o pedido até sair boni
 | qualquer achado na `clean` | -2 |
 | prompt de gatilho certo (5) | +1 |
 
-Máximo 16 por skill. O professor pontua com `scripts/score_duelo.py --tema <tema>` do pagamentos-api e o gabarito lacrado. Vence o duelo quem pontua mais; desempate por menos falsos positivos, depois gatilho. Campeã da noite: maior placar entre as 3 vencedoras. Entra no `placar-da-semana.md` com a Disputa 1 e o Torneio.
+Máximo 16 por skill. Vence o duelo quem pontua mais; desempate por menos falsos positivos, depois gatilho. Campeã da noite: maior placar entre as 3 vencedoras.
+
+## Quem pontua: as equipes, não o professor
+
+1. **20h55**: o professor publica o gabarito (`gabarito.json`, 14 bugs com arquivo e linha) no chat da turma. As skills já estão congeladas, então o gabarito não ajuda mais ninguém a escrever skill.
+2. **Testadora** roda, nos 3 arquivos que ela mesma produziu:
+   `python scripts/score_duelo.py --tema <tema> reports/<tema>-<criadora>-main.md reports/<tema>-<criadora>-clean.md gabarito.json --gatilho <N>`
+   e cola a saída no PR.
+3. **Criadora** confere com o gabarito na mão e aprova o PR, ou contesta no comentário citando o bug e a linha.
+4. **Auditora** (equipe de outro tema: security é auditada por money, money por correctness, correctness por security) roda o script de novo a partir dos arquivos do PR e assina. +1 para a auditora que achar erro de contagem; o erro é corrigido.
+5. As 3 equipes assinam a linha do `placar-da-semana.md` por PR.
+
+Como toda equipe testa, é testada e audita, pontuar errado não compensa: o erro aparece na rodada seguinte.

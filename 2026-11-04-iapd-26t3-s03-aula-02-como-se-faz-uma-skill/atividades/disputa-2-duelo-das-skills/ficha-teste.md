@@ -39,9 +39,17 @@ Escreva 5 prompts SEUS, rode cada um em sessão nova e anote o que carregou.
 
 Salve esta tabela em `reports/<tema>-<criadora>-gatilho.md`.
 
-## 4. Entregar (2 min)
+## 4. Pontuar e entregar (2 min)
 
-PR no repo da criadora com os 3 arquivos, até 21h20. Título: `S03 Aula 02: teste de review-<tema> por <equipe testadora>`.
+Com o `gabarito.json` liberado no chat às 20h55:
+
+```
+python scripts/score_duelo.py --tema <tema> reports/<tema>-<criadora>-main.md reports/<tema>-<criadora>-clean.md gabarito.json --gatilho <acertos de 0 a 5>
+```
+
+PR no repo da criadora com os 3 arquivos e a saída do script colada na descrição, até 21h20. Título: `S03 Aula 02: teste de review-<tema> por <equipe testadora>`.
+
+A criadora aprova ou contesta citando bug e linha. A auditora (equipe de outro tema) roda o script de novo e assina. Pontos finais: ______ (assinam testadora, criadora e auditora).
 
 ## Comentário (3 linhas, opcional): o que a skill faria melhor com uma mudança só
 

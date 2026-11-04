@@ -8,14 +8,15 @@ Slides: `IAPD-26T3 - S03 - Aula 02 - 2026-11-04 - Como se faz uma skill.pdf`
 
 | Hora | Bloco |
 |---|---|
-| 19h00 | Bloco 3: como se faz uma skill, em seis passos |
-| 19h25 | Demo ao vivo: o gatilho medido (passo 3) |
-| 19h45 | Demo ao vivo: o agente escreve a skill (passo 6) |
+| 19h00 | Bloco 3: seis passos para uma skill (passos 1 e 2) |
+| 19h20 | Demo ao vivo: o gatilho medido (passo 3) |
+| 19h35 | Passos 4 a 6: o agente escreve a skill ao vivo |
+| 19h45 | Catálogos ao vivo: [skills.sh](https://skills.sh/) e [SkillsMP](https://skillsmp.com/) |
 | 19h55 | Sorteio: 3 temas, 2 equipes por tema |
 | 20h00 | Intervalo |
 | 20h20 | Duelo, fase 1: criar a skill (35 min) |
-| 20h55 | Duelo, fase 2: testar a skill da adversária (25 min) |
-| 21h20 | Julgamento, placar da semana, amanhã |
+| 20h55 | Gabarito liberado no chat. Duelo, fase 2: testar a skill da adversária (25 min) |
+| 21h20 | Auditoria cruzada, placar da semana, amanhã |
 
 ## Os seis passos (Bloco 3)
 
@@ -37,12 +38,12 @@ Slides: `IAPD-26T3 - S03 - Aula 02 - 2026-11-04 - Como se faz uma skill.pdf`
 
 ## O Duelo em uma linha
 
-Sorteio de 3 temas (`review-security`, `review-correctness`, `review-money`), 2 equipes por tema. Cada equipe cria UMA skill no próprio projeto. A adversária instala a skill sem mexer nela e roda contra o `iapd-26t3-pagamentos-api`: branch `main` (bug do tema +3, falso positivo -2), branch `clean` (qualquer achado -2) e 5 prompts de gatilho (+1 cada). Máximo 16. O professor pontua com `scripts/score_duelo.py`. Vence o duelo quem pontua mais; campeã da noite é a maior entre as 3 vencedoras. Detalhes em `regras.md`.
+Sorteio de 3 temas (`review-security`, `review-correctness`, `review-money`), 2 equipes por tema. Cada equipe cria UMA skill no próprio projeto. A adversária instala a skill sem mexer nela e roda contra o `iapd-26t3-pagamentos-api`: branch `main` (bug do tema +3, falso positivo -2), branch `clean` (qualquer achado -2) e 5 prompts de gatilho (+1 cada). Máximo 16. O gabarito é liberado às 20h55 e as próprias equipes pontuam com `scripts/score_duelo.py`: a testadora roda, a criadora confere, uma terceira audita. Vence o duelo quem pontua mais; campeã da noite é a maior entre as 3 vencedoras. Detalhes em `regras.md`.
 
 ## Entregáveis de hoje
 
 - Fase 1: PR no repo da equipe com `review-<tema>/` (SKILL.md válido, scripts, evals), até 20h55.
-- Fase 2: PR no repo da criadora com `reports/<tema>-<criadora>-main.md`, `-clean.md` e `-gatilho.md`, até 21h20.
+- Fase 2: PR no repo da criadora com `reports/<tema>-<criadora>-main.md`, `-clean.md`, `-gatilho.md` e a saída do `score_duelo.py`, até 21h20. Linha no `placar-da-semana.md` assinada por testadora, criadora e auditora.
 
 ## Lista da semana (entrega 09/11)
 
