@@ -15,7 +15,7 @@ Slides: `IAPD-26T3 - S03 - Aula 02 - 2026-11-04 - Como se faz uma skill.pdf`
 | 19h55 | Sorteio: 3 temas, 2 equipes por tema |
 | 20h00 | Intervalo |
 | 20h20 | Duelo, fase 1: criar a skill (35 min) |
-| 20h55 | Gabarito liberado no chat. Duelo, fase 2: testar a skill da adversária (25 min) |
+| 20h55 | Duelo, fase 2: testar a skill da adversária (25 min) |
 | 21h20 | Auditoria cruzada, placar da semana, amanhã |
 
 ## Os seis passos (Bloco 3)
@@ -32,18 +32,18 @@ Slides: `IAPD-26T3 - S03 - Aula 02 - 2026-11-04 - Como se faz uma skill.pdf`
 | Atividade | Pasta | O que usa |
 |---|---|---|
 | Demo do gatilho (professor, 20 min) | `atividades/demo-gatilho/` | 4 skills da `extra-suite-e-agente-revisor/suite-referencia/` instaladas; 6 prompts de `trigger-eval.json` (3 positivos, 3 near-misses), 3 rodadas; a turma prevê antes. A `ficha.md` fica como exercício extra |
-| Disputa 2: o Duelo das Skills (70 min) | `atividades/disputa-2-duelo-das-skills/` | `regras.md`, `ficha-criacao.md`, `ficha-teste.md`, `template/review-tema/` e `validate.py` |
+| Disputa 2: o Duelo das Skills (70 min) | `atividades/disputa-2-duelo-das-skills/` | `regras.md`, `ficha-criacao.md`, `ficha-teste.md`, `template/review-tema/`, `validate.py`, os casos públicos em `casos/<tema>/` e o template de caso novo em `casos-novos/` |
 | Extra: suíte e agente revisor | `atividades/extra-suite-e-agente-revisor/` | leitura para a lista da semana: `suite-referencia/`, `kiro/` (agentes, hook, steering) e `claude/` |
 | Extra: dissecação | `atividades/extra-dissecacao/` | 4 skills reais para criticar com a `ficha.md` |
 
 ## O Duelo em uma linha
 
-Sorteio de 3 temas (`review-security`, `review-correctness`, `review-money`), 2 equipes por tema. Cada equipe cria UMA skill no próprio projeto. A adversária instala a skill sem mexer nela e roda contra o `iapd-26t3-pagamentos-api`: branch `main` (bug do tema +3, falso positivo -2), branch `clean` (qualquer achado -2) e 5 prompts de gatilho (+1 cada). Máximo 16. O gabarito é liberado às 20h55 e as próprias equipes pontuam com `scripts/score_duelo.py`: a testadora roda, a criadora confere, uma terceira audita. Vence o duelo quem pontua mais; campeã da noite é a maior entre as 3 vencedoras. Detalhes em `regras.md`.
+Sorteio de 3 temas (`review-security`, `review-correctness`, `review-performance`), 2 equipes por tema. Cada equipe cria UMA skill no próprio projeto. A adversária instala a skill sem mexer nela e roda, em sessão nova, os 4 casos públicos do tema (+2 cada), até 4 casos novos que ela mesma cria e documenta (+1 cada para a criadora se passar, +1 para a testadora se falhar e a auditora aceitar) e 5 prompts de gatilho (+1 cada). Máximo 17. Não há gabarito escondido nem professor corrigindo: testadora pontua, criadora confere, uma terceira equipe audita. Detalhes em `regras.md`.
 
 ## Entregáveis de hoje
 
 - Fase 1: PR no repo da equipe com `review-<tema>/` (SKILL.md válido, scripts, evals), até 20h55.
-- Fase 2: PR no repo da criadora com `reports/<tema>-<criadora>-main.md`, `-clean.md`, `-gatilho.md` e a saída do `score_duelo.py`, até 21h20. Linha no `placar-da-semana.md` assinada por testadora, criadora e auditora.
+- Fase 2: PR no repo da criadora com a `ficha-teste.md` preenchida, `reports/` e `casos-novos/`, até 21h20. Linha no `placar-da-semana.md` assinada por testadora, criadora e auditora.
 
 ## Lista da semana (entrega 09/11)
 

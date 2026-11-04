@@ -2,32 +2,39 @@
 
 Equipe testadora: ____________   Equipe criadora: ____________   Skill: review-__________
 
-Regras: SKILL.md intocado; sessão nova a cada rodada; o pedido é feito uma vez e a primeira resposta vale; achado sem arquivo e linha não casa com nada.
+Regras: SKILL.md intocado; sessão nova a cada caso; o pedido é feito uma vez e a primeira resposta vale; achado sem arquivo e linha não conta.
 
 ## 0. Instalar (3 min)
 
-Clone o repo da criadora, copie a pasta da skill para a pasta de skills da sua ferramenta. Clone `iapd-26t3-pagamentos-api`.
+Clone o repo da criadora, copie a pasta da skill para a pasta de skills da sua ferramenta. Abra `casos/<tema>/README.md` para ver o que cada caso espera.
 
-## 1. Branch `main` (8 min)
+## 1. Casos públicos (10 min)
 
-`git checkout main`. Sessão nova. Pedido usado (escreva exatamente): ______________________________
+Um por vez, sessão nova, pedido padrão do tema. Salve cada resposta em `reports/<tema>-<criadora>-publico-NN.md`.
 
-A skill disparou? ___   Salve a resposta em `reports/<tema>-<criadora>-main.md` no formato:
+| Caso | Skill disparou? | Linha citada | Passou? | Pontos |
+|---|---|---|---|---|
+| 01 | | | | /2 |
+| 02 | | | | /2 |
+| 03 | | | | /2 |
+| 04 (limpo) | | achados médio+: ___ | | /2 |
 
-```
-| # | Arquivo | Linha | Severidade | Categoria | Evidência | Sugestão |
-|---|---|---|---|---|---|---|
-```
+Subtotal casos públicos: ____/8
 
-Rode `python scripts/validate_report.py reports/<tema>-<criadora>-main.md` (do pagamentos-api) e corrija só o FORMATO, nunca o conteúdo.
+## 2. Casos novos (6 min)
 
-## 2. Branch `clean` (6 min)
+Até 4 trechos SEUS, pequenos e compiláveis, um bug do tema em cada (ou nenhum, no caso limpo). Documente cada um com `casos-novos/template.md`. Salve as respostas em `reports/<tema>-<criadora>-novo-NN.md`.
 
-`git checkout clean`. Sessão nova. Mesmo pedido. Salve em `reports/<tema>-<criadora>-clean.md`. Achados aqui: ___ (cada um é -2).
+| Caso | Bug esperado (linha) | Passou? | Aceito pela auditora? | Ponto criadora | Ponto testadora |
+|---|---|---|---|---|---|
+| N1 | | | | | |
+| N2 | | | | | |
+| N3 | | | | | |
+| N4 | | | | | |
 
-## 3. Gatilho (6 min)
+Subtotal casos novos: criadora ____/4, testadora ____
 
-Escreva 5 prompts SEUS, rode cada um em sessão nova e anote o que carregou.
+## 3. Gatilho (4 min)
 
 | # | Prompt | Esperado | Disparou? | Ponto |
 |---|---|---|---|---|
@@ -37,19 +44,15 @@ Escreva 5 prompts SEUS, rode cada um em sessão nova e anote o que carregou.
 | 4 | | não dispara (near-miss) | | |
 | 5 | | não dispara (near-miss) | | |
 
-Salve esta tabela em `reports/<tema>-<criadora>-gatilho.md`.
+Subtotal gatilho: ____/5
 
-## 4. Pontuar e entregar (2 min)
+## 4. Entregar (2 min)
 
-Com o `gabarito.json` liberado no chat às 20h55:
+**Total da criadora: ____/17**   **Pontos da testadora (casos novos falhados): ____**
 
-```
-python scripts/score_duelo.py --tema <tema> reports/<tema>-<criadora>-main.md reports/<tema>-<criadora>-clean.md gabarito.json --gatilho <acertos de 0 a 5>
-```
+PR no repo da criadora com esta ficha, `reports/` e `casos-novos/`, até 21h20. Título: `S03 Aula 02: teste de review-<tema> por <equipe testadora>`.
 
-PR no repo da criadora com os 3 arquivos e a saída do script colada na descrição, até 21h20. Título: `S03 Aula 02: teste de review-<tema> por <equipe testadora>`.
-
-A criadora aprova ou contesta citando bug e linha. A auditora (equipe de outro tema) roda o script de novo e assina. Pontos finais: ______ (assinam testadora, criadora e auditora).
+Assinaturas: testadora ________  criadora ________  auditora ________
 
 ## Comentário (3 linhas, opcional): o que a skill faria melhor com uma mudança só
 

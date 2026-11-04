@@ -20,11 +20,12 @@ Copie `template/review-tema/` para a pasta de skills do repo da equipe (`.kiro/s
 - [ ] `description`: o quê + quando (palavras do usuário) + o que não faz
 - [ ] Gotchas: uma linha por correção da tabela acima, com o R__
 - [ ] Procedimento numerado, com os arquivos do tema para ler primeiro
-- [ ] Template de saída obrigatório com arquivo, linha, requisito e evidência (sem linha, zero ponto)
+- [ ] Template de saída obrigatório com arquivo, linha, severidade e evidência (sem linha, zero ponto)
+- [ ] Rodou nos 4 casos públicos de `casos/<tema>/`? Passou em ___/4
 - [ ] O repetível em `scripts/` (ex.: grep de `float(`, de f-string em SQL, de `pan` em log)
 - [ ] Corpo abaixo de 500 linhas
 
-Pode usar o agente para escrever, desde que alimentado: transcrição do passo 1, spec, template. Pedido vazio dá skill genérica, e skill genérica inventa achado na `clean`.
+Pode usar o agente para escrever, desde que alimentado: transcrição do passo 1, spec, template. Pedido vazio dá skill genérica, e skill genérica inventa achado no caso limpo.
 
 ## Passo 6 (5 min): testar e congelar
 

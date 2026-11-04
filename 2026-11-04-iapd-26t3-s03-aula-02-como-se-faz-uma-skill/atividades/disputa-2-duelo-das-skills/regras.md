@@ -1,55 +1,60 @@
 # Disputa 2: o Duelo das Skills (70 min)
 
-Seis equipes, três temas, uma skill por equipe. Quem roda a sua skill é a adversária. Vence quem acha mais bugs do tema com menos erro.
+Seis equipes, três temas, uma skill por equipe. Quem roda a sua skill é a adversária. Vence quem passa em mais casos de teste com menos erro.
 
 ## Sorteio (19h55)
 
 Três temas, duas equipes por tema, duelo direto:
 
-| Tema | Skill | O que cobre no pagamentos-api |
-|---|---|---|
-| security | `review-security` | injeção de SQL, comparação de segredo, segredo com valor padrão, dado de cartão em log |
-| correctness | `review-correctness` | paginação, datas e fusos, idempotência de webhook, erros engolidos |
-| money | `review-money` | centavos e float, arredondamento de taxa, limite de reembolso |
+| Tema | Skill | Cobre | Pedido padrão |
+|---|---|---|---|
+| security | `review-security` | injeção, auth fraca, segredo exposto, dado sensível em log | "revisa a segurança deste arquivo" |
+| correctness | `review-correctness` | lógica, borda, estado, data e fuso | "revisa a correção deste arquivo" |
+| performance | `review-performance` | complexidade, I/O repetido, memória, índice | "revisa o desempenho deste arquivo" |
+
+## Casos de teste: públicos e novos
+
+Não há gabarito escondido. Existem dois tipos de caso:
+
+- **Casos públicos** (`casos/<tema>/`): 4 por tema, 3 trechos com bug e 1 limpo, com `README.md` dizendo o que a skill precisa achar e em que linha. Estão no repo desde antes da aula; leia antes de escrever a skill. Toda skill do tema precisa passar neles.
+- **Casos novos** (`casos-novos/`): a testadora é livre para criar até 4 trechos próprios (um pode ser limpo) para testar a skill da adversária. Só precisa documentar cada um pelo `casos-novos/template.md`: arquivo, bug esperado e linha, por que é do tema, pedido usado, resultado. A auditora aceita ou rejeita o caso (bug real, do tema, que um revisor humano acharia em 2 minutos).
 
 ## Fase 1: criar (20h20 a 20h55)
 
-Uma skill, pelos seis passos, no projeto da própria equipe (o construído a partir da spec). Ficha: `ficha-criacao.md`. Template: `template/review-tema/`. Validação: `python validate.py <pasta>`.
+Uma skill, pelos seis passos, no projeto da própria equipe. Ficha: `ficha-criacao.md`. Template: `template/review-tema/`. Validação: `python validate.py <pasta>`. Rode nos 4 casos públicos antes de entregar.
 
 Entrega: PR no repo da equipe com a pasta da skill, até 20h55. Depois disso a skill está congelada: nenhum commit novo conta.
 
 ## Fase 2: testar a adversária (20h55 a 21h20)
 
-A adversária clona o repo da criadora, instala a skill na pasta da sua ferramenta e roda contra a bancada neutra, `iapd-26t3-pagamentos-api`:
+A adversária clona o repo da criadora, instala a skill na pasta da sua ferramenta e, em sessão nova a cada caso, roda:
 
-1. Branch `main` (14 bugs plantados, 3 do seu tema contam cheio), sessão nova, um pedido no vocabulário do tema. Primeira resposta vale.
-2. Branch `clean` (zero bugs), mesmo pedido. Qualquer achado é erro.
-3. Cinco prompts de gatilho escritos pela adversária: 3 que devem disparar, 2 near-misses.
+1. Os 4 casos públicos do tema, com o pedido padrão. Primeira resposta vale.
+2. Até 4 casos novos, documentados pelo template.
+3. Cinco prompts de gatilho: 3 que devem disparar, 2 near-misses.
 
-Ficha: `ficha-teste.md`. Entrega: `reports/<tema>-<equipe-criadora>-main.md`, `...-clean.md` e `...-gatilho.md` por PR no repo da criadora, até 21h20.
+Ficha: `ficha-teste.md`. Entrega por PR no repo da criadora, até 21h20: a ficha preenchida, as saídas em `reports/` e os casos novos em `casos-novos/`.
 
-Regras de quem testa: não edita o SKILL.md; não repete o pedido até sair bonito; relatório no formato de tabela com arquivo e linha (achado sem linha não casa com nada).
+Regras de quem testa: não edita o SKILL.md; não repete o pedido até sair bonito; achado sem arquivo e linha não conta.
 
 ## Placar
 
-| Evento | Pontos |
-|---|---|
-| bug do tema encontrado (3 por tema) | +3 |
-| bug de outro tema encontrado (até 2) | +1 |
-| falso positivo na `main` | -2 |
-| qualquer achado na `clean` | -2 |
-| prompt de gatilho certo (5) | +1 |
+| Evento | Pontos | Para quem |
+|---|---|---|
+| caso público passado (4 por tema; nos casos com 2 bugs, +1 por bug) | +2 | criadora |
+| caso limpo: passa se não houver achado de severidade média ou maior | (é um dos 4) | criadora |
+| caso novo passado (até 4, aceitos pela auditora) | +1 | criadora |
+| caso novo em que a skill falhou, aceito pela auditora | +1 | testadora |
+| prompt de gatilho certo (5) | +1 | criadora |
+| achado sem arquivo e linha | 0 | |
 
-Máximo 16 por skill. Vence o duelo quem pontua mais; desempate por menos falsos positivos, depois gatilho. Campeã da noite: maior placar entre as 3 vencedoras.
+Máximo 17 para a criadora (8 + 4 + 5). Vence o duelo quem pontua mais; desempate por casos novos passados, depois gatilho. Campeã da noite: maior placar entre as 3 vencedoras.
 
 ## Quem pontua: as equipes, não o professor
 
-1. **20h55**: o professor publica o gabarito (`gabarito.json`, 14 bugs com arquivo e linha) no chat da turma. As skills já estão congeladas, então o gabarito não ajuda mais ninguém a escrever skill.
-2. **Testadora** roda, nos 3 arquivos que ela mesma produziu:
-   `python scripts/score_duelo.py --tema <tema> reports/<tema>-<criadora>-main.md reports/<tema>-<criadora>-clean.md gabarito.json --gatilho <N>`
-   e cola a saída no PR.
-3. **Criadora** confere com o gabarito na mão e aprova o PR, ou contesta no comentário citando o bug e a linha.
-4. **Auditora** (equipe de outro tema: security é auditada por money, money por correctness, correctness por security) roda o script de novo a partir dos arquivos do PR e assina. +1 para a auditora que achar erro de contagem; o erro é corrigido.
-5. As 3 equipes assinam a linha do `placar-da-semana.md` por PR.
+1. **Testadora** preenche a `ficha-teste.md` caso a caso e abre o PR no repo da criadora.
+2. **Criadora** confere e aprova, ou contesta no comentário citando o caso e a linha.
+3. **Auditora** (equipe de outro tema: security é auditada por performance, performance por correctness, correctness por security) aceita ou rejeita cada caso novo, confere os casos públicos contestados e assina.
+4. As 3 equipes assinam a linha do `placar-da-semana.md` por PR.
 
 Como toda equipe testa, é testada e audita, pontuar errado não compensa: o erro aparece na rodada seguinte.
