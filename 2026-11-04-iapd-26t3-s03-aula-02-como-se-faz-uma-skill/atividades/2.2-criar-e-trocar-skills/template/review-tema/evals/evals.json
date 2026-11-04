@@ -1,0 +1,15 @@
+{
+  "skill": "review-tema",
+  "gatilho": [
+    {"prompt": "TODO: pedido que DEVE disparar, com as palavras do usuário", "esperado": "dispara"},
+    {"prompt": "TODO: outro pedido que deve disparar, escrito de outro jeito", "esperado": "dispara"},
+    {"prompt": "TODO: terceiro, curto, tipo 'confere o dinheiro desse PR'", "esperado": "dispara"},
+    {"prompt": "TODO: near-miss, parece mas não é (ex.: 'escreve o teste do reembolso')", "esperado": "nao-dispara"},
+    {"prompt": "TODO: near-miss, tema vizinho (ex.: 'revisa a segurança do webhook')", "esperado": "nao-dispara"}
+  ],
+  "casos": [
+    {"id": 1, "entrada": "TODO: arquivo ou trecho do projeto vizinho com a violação", "esperado": "TODO: achado com arquivo, linha e R__"},
+    {"id": 2, "entrada": "TODO", "esperado": "TODO"},
+    {"id": 3, "entrada": "TODO: trecho CORRETO; a skill não deve inventar achado", "esperado": "nenhum achado"}
+  ]
+}

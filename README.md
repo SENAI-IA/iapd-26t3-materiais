@@ -19,7 +19,7 @@ Uma pasta por aula. O nome da pasta diz tudo: `AAAA-MM-DD-iapd-26t3-sNN-aula-NN-
 | 19/10 | S01 | 1 | Ensinando máquinas: o que acontece entre o Enter e a resposta | `2026-10-19-iapd-26t3-s01-aula-01-ensinando-maquinas/` |
 | 21/10 | S01 | 2 | Falando com máquinas: Bag of Words, tokens, vetores e atenção | `2026-10-21-iapd-26t3-s01-aula-02-falando-com-maquinas/` |
 | 03/11 | S03 | 1 | Spec, steering e skill | `2026-11-03-iapd-26t3-s03-aula-01-spec-steering-e-skill/` |
-| 04/11 | S03 | 2 | Múltiplas skills | `2026-11-04-iapd-26t3-s03-aula-02-multiplas-skills/` |
+| 04/11 | S03 | 2 | Como se faz uma skill | `2026-11-04-iapd-26t3-s03-aula-02-como-se-faz-uma-skill/` |
 | 05/11 | S03 | 3 | Kit do trabalho final e o Torneio | `2026-11-05-iapd-26t3-s03-aula-03-kit-do-trabalho-final-e-torneio/` |
 
 Pastas transversais: `prompts/` (exemplos de prompt da turma) e `skills/` (skills compartilhadas). As duas aceitam Pull Request.
